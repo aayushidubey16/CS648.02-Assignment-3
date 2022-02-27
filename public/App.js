@@ -13,6 +13,10 @@ class ProductAdd extends React.Component {
 			Image: document.getElementById("image").value
 		};
 		this.props.addProduct(product);
+		document.getElementById("category").value = "";
+		document.getElementById("price").value = "";
+		document.getElementById("name").value = "";
+		document.getElementById("image").value = "";
 	}
 
 	render() {
@@ -39,6 +43,7 @@ class ProductAdd extends React.Component {
 					React.createElement(
 						"select",
 						{ name: "category", id: "category" },
+						React.createElement("option", { value: "" }),
 						React.createElement(
 							"option",
 							{ value: "Accessories" },
